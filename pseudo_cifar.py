@@ -1,4 +1,4 @@
-from keras.layers import Input, Dense, Conv2D, BatchNormalization, Activation, GlobalAveragePooling2D, AveragePooling2D, Dropout
+from keras.layers import Input, Dense, Conv2D, BatchNormalization, Activation, GlobalAveragePooling2D, AveragePooling2D
 from keras.models import Model
 import keras.backend as K
 from keras.callbacks import Callback
@@ -104,7 +104,7 @@ class PseudoCallback(Callback):
 
     def on_epoch_end(self, epoch, logs):
         # alpha(t)の更新
-        if epoch < 10:# 20-80にしたのは？
+        if epoch < 10:
             self.alpha_t = 0.0
         elif epoch >= 70:
             self.alpha_t = 3.0
